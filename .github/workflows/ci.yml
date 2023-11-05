@@ -269,7 +269,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1
 
-      - name: login GitHub Container Registry
+      - name: sudo command
         uses: ./
         with:
           host: ${{ secrets.HOST }}
@@ -278,4 +278,4 @@ jobs:
           port: ${{ secrets.PORT }}
           script_stop: true
           script: |
-            sudo su - -c whoami
+            sudo whoami
